@@ -49,7 +49,22 @@ rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 ### ROS-Agent bridge
+The ROS-Agent brige is the data transmission bridge, which retrieves sensor data from CARLA to pass it to Autoware and receives Autoware control command to pass it CARLA.
+1. Clone repositories and Maps.
+```shell
+mkdir -p ~/ros-agent/bridge
+cd ~/ros-agent/bridge
+git clone https://github.com/ROS-Agent/op_bridge.git -b AVP
+git clone https://github.com/ROS-Agent/op_agent.git -b AVP
+git clone https://github.com/ROS-Agent/scenario_runner.git
+git clone https://github.com/ROS-Agent/Maps.git
+```
+2. Download the Maps
+
+
+## Start the Simulation
 pass
+
 
 ## ROS-Agent Architecture
 this is a ROS-Agent Architecture which describes data flow of this project.
@@ -59,3 +74,5 @@ pass
 ### How to create HD Map
 pass
 
+## ROS-Agent Topic msg
+pass
