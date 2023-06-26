@@ -26,7 +26,7 @@ Autoware is the world's leading open-source software project for AD(Autonomous D
 ```shell
 mkdir ~/ros-agent
 cd ~/ros-agent
-git clone https://github.com/ROS-Agent/autoware-modified.git -b galactic
+git clone https://github.com/ROS-Agent/autoware.git -b galactic
 ```
 2. Install dependencies using Ansible. You can also install dependecies manually, following this [website](https://autowarefoundation.github.io/autoware-documentation/galactic/installation/autoware/source-installation/).
 ```shell
