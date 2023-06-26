@@ -92,15 +92,17 @@ source ./install/setup.bash
 cd ~/ros-agent/bridge/op_bridge/op_scripts
 ./run_exploration_mode_ros2.sh
 ```
-3. Set vehicle start pose
+1. Set vehicle initial pose.
+- (1) Click the `2D Pose estimate` button in the toolbar
+- (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the initial pose, as the following gif image shows.
+![](Docs/AVP_initial_pose.gif)
 
-
-4. Set parking destination pose
-
-
-
-Enjoy!!
-
+2. Set vehicle goal pose and `Engage` the vehicle, as the following gif image shows.
+- (1) Click the `2D Goal Pose` button in the toolbar
+- (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the goal pose. If done correctly, you will see a planned path from initial pose to goal pose
+- (3) Click the `Engage` button in `AutowareStatePanel`
+![](Docs/AVP_set_destination.gif)
+3. Enjoy!!
 
 
 ## ROS-Agent Architecture
@@ -110,7 +112,6 @@ this is a ROS-Agent Architecture which describes data flow of this project.
 pass
 ### How to create HD Map
 pass
-
 ## ROS-Agent Topic msg
 pass
 
