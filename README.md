@@ -71,8 +71,6 @@ sudo mv sensors_calibration.yaml ~/ros-agent/autoware/src/sensor_kit/sample_sens
 ```shell
 gedit ~/.bashrc
 # Add the following line to the bottom of the file.
-export CARLA_ROOT=~/carla
-export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.13-py3.8-linux-x86_64.egg
 export SCENARIO_RUNNER_ROOT=~/ros-agent/bridge/scenario_runner
 export LEADERBOARD_ROOT=~/ros-agent/bridge/op_bridge
 export TEAM_CODE_ROOT=~/ros-agent/bridge/op_agent
