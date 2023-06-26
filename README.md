@@ -59,11 +59,48 @@ git clone https://github.com/ROS-Agent/op_agent.git -b AVP
 git clone https://github.com/ROS-Agent/scenario_runner.git
 git clone https://github.com/ROS-Agent/Maps.git
 ```
-2. Download the Maps
-
+2、Replace sensor config and launch files
+```shell
+cd ~/ros-agent/bridge/Maps
+sudo mv autoware.launch.xml ~/ros-agent/autoware/src/launcher/autoware_launch/autoware_launch/launch/autoware.launch.xml
+sudo mv gnss.launch.xml ~/ros-agent/autoware/src/sensor_kit/sample_sensor_kit_launch/sample_sensor_kit_launch/launch/gnss.launch.xml
+sudo mv sensor_kit_calibration.yaml ~/ros-agent/autoware/src/sensor_kit/sample_sensor_kit_launch/sample_sensor_kit_description/config/sensor_kit_calibration.yaml
+sudo mv sensors_calibration.yaml ~/ros-agent/autoware/src/sensor_kit/sample_sensor_kit_launch/sample_sensor_kit_description/config/sensors_calibration.yaml
+```
+3. Set environment variables
+```shell
+gedit ~/.bashrc
+# Add the following line to the bottom of the file.
+export CARLA_ROOT=~/carla
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.13-py3.8-linux-x86_64.egg
+export SCENARIO_RUNNER_ROOT=~/ros-agent/bridge/scenario_runner
+export LEADERBOARD_ROOT=~/ros-agent/bridge/op_bridge
+export TEAM_CODE_ROOT=~/ros-agent/bridge/op_agent
+# Save the file and reset the terminal.
+```
 
 ## Start the Simulation
-pass
+1. Open one terminal
+```sh
+cd $CARLA_ROOT
+./CarlaUE4.sh
+```
+2. Open another terminal
+```sh
+cd ~/ros-agent/autoware
+source ./install/setup.bash
+cd ~/ros-agent/bridge/op_bridge/op_scripts
+./run_exploration_mode_ros2.sh
+```
+3. Set vehicle start pose
+
+
+4. Set parking destination pose
+
+
+
+Enjoy!!
+
 
 
 ## ROS-Agent Architecture
@@ -76,3 +113,5 @@ pass
 
 ## ROS-Agent Topic msg
 pass
+
+
