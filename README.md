@@ -94,13 +94,12 @@ cd ~/ros-agent/bridge/op_bridge/op_scripts
 ```
 3. Set vehicle initial pose.
 - (1) Click the `2D Pose estimate` button in the toolbar
-- (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the initial pose, as the following gif image shows.
+- (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the initial pose, as the following gif image shows. 
 ![](Docs/AVP_initial_pose.gif)
-
 4. Set vehicle goal pose and `Engage` the vehicle, as the following gif image shows.
 - (1) Click the `2D Goal Pose` button in the toolbar
 - (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the goal pose. If done correctly, you will see a planned path from initial pose to goal pose
-- (3) Click the `Engage` button in `AutowareStatePanel`
+- (3) Click the `Engage` button in `AutowareStatePanel` 
 ![](Docs/AVP_set_destination.gif)
 5. Enjoy!!
 
