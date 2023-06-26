@@ -59,7 +59,7 @@ git clone https://github.com/ROS-Agent/op_agent.git -b AVP
 git clone https://github.com/ROS-Agent/scenario_runner.git
 git clone https://github.com/ROS-Agent/Maps.git
 ```
-2、Replace sensor config and launch files
+2. Replace sensor config and launch files
 ```shell
 cd ~/ros-agent/bridge/Maps
 sudo mv autoware.launch.xml ~/ros-agent/autoware/src/launcher/autoware_launch/autoware_launch/launch/autoware.launch.xml
