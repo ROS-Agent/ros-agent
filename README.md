@@ -95,6 +95,7 @@ cd ~/ros-agent/bridge/op_bridge/op_scripts
 3. Set vehicle initial pose.
 - (1) Click the `2D Pose estimate` button in the toolbar
 - (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the initial pose, as the following gif image shows.
+
 ![](Docs/AVP_initial_pose.gif)
 
 4. Set vehicle goal pose and `Engage` the vehicle, as the following gif image shows.
