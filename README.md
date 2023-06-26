@@ -28,7 +28,7 @@ mkdir ~/ros-agent
 cd ~/ros-agent
 git clone https://github.com/ROS-Agent/autoware-modified.git -b galactic
 ```
-2. Installing dependencies using Ansible. You can also install dependecies manually, following this [website](https://autowarefoundation.github.io/autoware-documentation/galactic/installation/autoware/source-installation/).
+2. Install dependencies using Ansible. You can also install dependecies manually, following this [website](https://autowarefoundation.github.io/autoware-documentation/galactic/installation/autoware/source-installation/).
 ```shell
 cd ~/ros-agent/autoware
 ./setup-dev-env.sh
@@ -106,12 +106,26 @@ cd ~/ros-agent/bridge/op_bridge/op_scripts
 
 
 ## ROS-Agent Architecture
-this is a ROS-Agent Architecture which describes data flow of this project.
+This is a ROS-Agent Architecture which describes data flow of this project.
 ![](./Docs/ROS-Agent-Architectue.png)
 ### How to create PCD Map
-pass
+There are many ways to create PCD Map using CARLA simulation sensor data. In this project, we use the following two ways.
+1. PCL Recorder. This is a CARLA official ROS Package to allows you to create point cloud maps from CARLA maps. Fore more information, please check this [webpage](https://carla.readthedocs.io/projects/ros-bridge/en/latest/pcl_recorder/).
+2. LIO-SAM(SLAM). This method uses CARLA sensor data(LiDAR, IMU, GNSS) to SLAM. [Here](https://github.com/TixiaoShan/LIO-SAM/tree/ros2) is a real-time lidar-inertial odometry SLAM package. 
+
+For more information about Map Creation, please check the Autoware Official website tutorial [guides](https://autowarefoundation.github.io/autoware-documentation/galactic/how-to-guides/creating-maps-for-autoware/).
+
+
+
 ### How to create HD Map
-pass
+There are also many ways to create HD Map, but in order to satisfy Autoware's HD Map formap(extended `Lanelet2`), we use the official HD Map Tools [Vector Map Builder](https://tools.tier4.jp/feature/vector_map_builder_ll2/). Here are some useful information for your reference:
+1. Vector Map Builder [official tutorial](https://docs.web.auto/en/user-manuals/vector-map-builder/introduction).
+2. Vector Map Builder short [video tutorial](https://www.bilibili.com/video/BV1Ku411f7xi/?spm_id_from=333.337.search-card.all.click&vd_source=a6a9cc0d52649040755e83284281ceb9).
+3. Map Toolbox for Autoware, [a unity package tool](https://github.com/autocore-ai/MapToolbox).
+4. [ASSURE mapping tools](https://github.com/hatem-darweesh/assuremappingtools). A desktop based tool for viewing, editing and saving road network maps for autonomous vehicle platforms such as Autoware.
+5. OSM map editor [JOSM](https://learnosm.org/zh_CN/beginner/start-osm/).
+6. [Autoware Lanelet2](https://github.com/autowarefoundation/autoware_common/blob/main/tmp/lanelet2_extension/docs/lanelet2_format_extension.md) format details.
+
 ## ROS-Agent Topic msg
 pass
 
