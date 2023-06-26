@@ -126,6 +126,14 @@ There are also many ways to create HD Map, but in order to satisfy Autoware's HD
 5. OSM map editor [JOSM](https://learnosm.org/zh_CN/beginner/start-osm/).
 6. [Autoware Lanelet2](https://github.com/autowarefoundation/autoware_common/blob/main/tmp/lanelet2_extension/docs/lanelet2_format_extension.md) format details.
 
+!!! note
+    Vector Map Builder only supports ascii pcd map and do not support binary pcd map. You can use the `pcl_converter` command to complete the conversion between the two formats. 
+    ```
+    pcl_converter -f ascii source.pcd dest.pcd
+    # if you have some problems, please check whether you have install `pcl-tools`.
+    sudo apt install pcl-tools
+    ```
+
 ## ROS-Agent Topic msg
 pass
 
