@@ -1,5 +1,5 @@
 # ros-agent
-This is a co-simulation project of AVP (Automated Valet Parking) based on CARLA and Autoware. Based on ROS2, the ros-agent retrieve sensor data from CARLA and transmit it to Autoware, then Autoware calculate the control command to pass it to CARLA to execute. 
+This is a co-simulation project of AVP (Automated Valet Parking) based on CARLA and Autoware. Based on ROS2, the ros-agent retrieve sensor data from CARLA and transmit it to Autoware, then Autoware calculates the control command to pass it to CARLA to execute. 
 
 ![demo](./Docs/AVP2_short.gif) 
 
