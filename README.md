@@ -130,7 +130,40 @@ pcl_converter -f ascii source.pcd dest.pcd
 sudo apt install pcl-tools
 ```
 
-## ROS-Agent Topic msg
-pass
+## ROS-Agent Bridge topic interface
+### Lidar
+| Topic name                                      | Topic type                                       | Description                                |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `/carla_pointcloud`                                   | [sensor_msgs/msg/PointCloud2](https://docs.ros2.org/galactic/api/sensor_msgs/msg/CameraInfo.html)     | 3D Lidar sensor data|
+### Camera
+| Topic name                                      | Topic type                                       | Description                                |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `/sensing/camera/traffic_light/camera_info`                                   | [sensor_msgs/msg/CameraInfo](https://docs.ros2.org/galactic/api/sensor_msgs/msg/CameraInfo.html)     | This message defines meta information for a camera.|
+|`/sensing/camera/traffic_light/image_raw`|[sensor_msgs/msg/Image](https://docs.ros2.org/galactic/api/sensor_msgs/msg/Image.html)| This message contains an uncompressed image |
+### IMU
+| Topic name                                      | Topic type                                       | Description                                |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `/sensing/imu/tamagawa/imu_raw`                                   | [sensor_msgs/msg/Imu](https://docs.ros2.org/galactic/api/sensor_msgs/msg/Imu.html)     | This is a message to hold data from an IMU (Inertial Measurement Unit)|
+### GNSS
+| Topic name                                      | Topic type                                       | Description                                |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `/sensing/gnss/ublox/nav_sat_fix`                                   | [sensor_msgs/msg/NavSatFix](https://docs.ros2.org/galactic/api/sensor_msgs/msg/NavSatFix.html)     | Navigation Satellite fix for any Global Navigation Satellite System
+|
+### Vehicle Velocity
+| Topic name                                      | Topic type                                       | Description                                |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `/vehicle/status/velocity_status`                                   | [autoware_auto_vehicle_msgs/msg/VelocityReport](https://github.com/tier4/autoware_auto_msgs/blob/tier4/main/autoware_auto_vehicle_msgs/msg/VelocityReport.idl)     | Vechilce realtime velocity data |
+### Vehicle SteerAngle
+| Topic name                                      | Topic type                                       | Description                                |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `/vehicle/status/steering_status`                                   | [autoware_auto_vehicle_msgs/msg/SteeringReport](https://github.com/tier4/autoware_auto_msgs/blob/tier4/main/autoware_auto_vehicle_msgs/msg/SteeringReport.idl)     | Vechilce realtime steering angle data |
+### Vehicle Control Mode
+| Topic name                                      | Topic type                                       | Description                                |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `/vehicle/status/control_mode`                                   | [autoware_auto_vehicle_msgs/msg/ControlModeReport](https://github.com/tier4/autoware_auto_msgs/blob/tier4/main/autoware_auto_vehicle_msgs/msg/ControlModeReport.idl)     | Contorl mode includes NO_COMMAND\AUTONOMOUS\AUTONOMOUS_STEER_ONLY\AUTONOMOUS_VELOCITY_ONLY\MANUAL\DISENGAGED\NOT_READY |
+### Control_command
+| Topic name                                      | Topic type                                       | Description                                |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `/control/command/control_cmd`                                   | [autoware_auto_control_msgs/msg/AckermannControlCommand](https://gitlab.com/autowarefoundation/autoware.auto/autoware_auto_msgs/-/blob/master/autoware_auto_control_msgs/msg/AckermannControlCommand.idl)     | Lateral and longitudinal control message for Ackermann-style platforms |
 
 
