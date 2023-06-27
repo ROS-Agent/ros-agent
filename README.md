@@ -16,7 +16,7 @@ The overall installation includes four parts:
 - Autoware installation
 - ros-agent bridge installation
 ### CARLA
-pass
+Download the specified [CARLA version](http://gofile.me/6MDrn/UOvykgikS) with SUSTC_Parkinglot Map.
 
 ### ROS2
 This project is based on ROS2 galactic. In order to install galactic, please follow the official [tutorial](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html).
@@ -26,7 +26,7 @@ Autoware is the world's leading open-source software project for AD(Autonomous D
 ```shell
 mkdir ~/ros-agent
 cd ~/ros-agent
-git clone https://github.com/ROS-Agent/autoware-modified.git -b galactic
+git clone https://github.com/ROS-Agent/autoware.git -b galactic
 ```
 2. Install dependencies using Ansible. You can also install dependecies manually, following this [website](https://autowarefoundation.github.io/autoware-documentation/galactic/installation/autoware/source-installation/).
 ```shell
@@ -59,7 +59,7 @@ git clone https://github.com/ROS-Agent/op_agent.git -b AVP
 git clone https://github.com/ROS-Agent/scenario_runner.git
 git clone https://github.com/ROS-Agent/Maps.git
 ```
-2、Replace sensor config and launch files
+2. Replace sensor config and launch files
 ```shell
 cd ~/ros-agent/bridge/Maps
 sudo mv autoware.launch.xml ~/ros-agent/autoware/src/launcher/autoware_launch/autoware_launch/launch/autoware.launch.xml
@@ -71,8 +71,6 @@ sudo mv sensors_calibration.yaml ~/ros-agent/autoware/src/sensor_kit/sample_sens
 ```shell
 gedit ~/.bashrc
 # Add the following line to the bottom of the file.
-export CARLA_ROOT=~/carla
-export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.13-py3.8-linux-x86_64.egg
 export SCENARIO_RUNNER_ROOT=~/ros-agent/bridge/scenario_runner
 export LEADERBOARD_ROOT=~/ros-agent/bridge/op_bridge
 export TEAM_CODE_ROOT=~/ros-agent/bridge/op_agent
@@ -94,14 +92,11 @@ cd ~/ros-agent/bridge/op_bridge/op_scripts
 ```
 3. Set vehicle initial pose.
 - (1) Click the `2D Pose estimate` button in the toolbar
-- (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the initial pose, as the following gif image shows.
-![](Docs/AVP_initial_pose.gif)
-
+- (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the initial pose, as the following gif image shows. ![](Docs/AVP_initial_pose.gif)
 4. Set vehicle goal pose and `Engage` the vehicle, as the following gif image shows.
 - (1) Click the `2D Goal Pose` button in the toolbar
 - (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the goal pose. If done correctly, you will see a planned path from initial pose to goal pose
-- (3) Click the `Engage` button in `AutowareStatePanel`
-![](Docs/AVP_set_destination.gif)
+- (3) Click the `Engage` button in `AutowareStatePanel` ![](Docs/AVP_set_destination.gif)
 5. Enjoy!!
 
 
