@@ -147,8 +147,7 @@ sudo apt install pcl-tools
 ### GNSS
 | Topic name                                      | Topic type                                       | Description                                |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `/sensing/gnss/ublox/nav_sat_fix`                                   | [sensor_msgs/msg/NavSatFix](https://docs.ros2.org/galactic/api/sensor_msgs/msg/NavSatFix.html)     | Navigation Satellite fix for any Global Navigation Satellite System
-|
+| `/sensing/gnss/ublox/nav_sat_fix`                                   | [sensor_msgs/msg/NavSatFix](https://docs.ros2.org/galactic/api/sensor_msgs/msg/NavSatFix.html)     | Navigation Satellite fix for any Global Navigation Satellite System |
 ### Vehicle Velocity
 | Topic name                                      | Topic type                                       | Description                                |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
