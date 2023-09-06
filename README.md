@@ -134,7 +134,7 @@ sudo apt install pcl-tools
 ### Lidar
 | Topic name                                      | Topic type                                       | Description                                |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `/carla_pointcloud`                                   | [sensor_msgs/msg/PointCloud2](https://docs.ros2.org/galactic/api/sensor_msgs/msg/CameraInfo.html)     | 3D Lidar sensor data|
+| `/carla_pointcloud`                                   | [sensor_msgs/msg/PointCloud2](https://docs.ros2.org/galactic/api/sensor_msgs/msg/PointCloud2.html)     | 3D Lidar sensor data|
 ### Camera
 | Topic name                                      | Topic type                                       | Description                                |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
