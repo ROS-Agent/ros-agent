@@ -16,7 +16,7 @@ The overall installation includes four parts:
 - Autoware installation
 - ros-agent bridge installation
 ### CARLA
-Download the specified [CARLA version](http://gofile.me/6MDrn/UOvykgikS) with SUSTC_Parkinglot Map. the Newest Version is recommended.([BaiduCloud](https://pan.baidu.com/share/init?surl=iLcAsa1yJSYNcisP1ymfow&pwd=b5au) | [GoogleDrive](https://drive.google.com/file/d/1kHZM-gMMSq9b4UvzKXK5PkzfXLoXZmkx/view))
+Download the specified [CARLA version](http://gofile.me/6MDrn/UOvykgikS) with SUSTC_Parkinglot Map. The newest version is recommended.([BaiduCloud](https://pan.baidu.com/share/init?surl=iLcAsa1yJSYNcisP1ymfow&pwd=b5au) | [GoogleDrive](https://drive.google.com/file/d/1kHZM-gMMSq9b4UvzKXK5PkzfXLoXZmkx/view))
 
 ### ROS2
 This project is based on ROS2 galactic. In order to install galactic, please follow the official [tutorial](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html).
