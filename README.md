@@ -105,7 +105,7 @@ cd ~/ros-agent/bridge/op_bridge/op_bridge
 4. Engage the vehicle by shell script.
 ```
 cd ~/ros-agent/bridge/op_bridge/op_bridge
-./reset_OccGrid_origin.sh
+./engage_sh.sh
 ```
 5. Enjoy!!
 
