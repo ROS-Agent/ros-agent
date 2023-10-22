@@ -26,7 +26,7 @@ Autoware is the world's leading open-source software project for AD(Autonomous D
 ```shell
 mkdir ~/ros-agent
 cd ~/ros-agent
-git clone https://github.com/ROS-Agent/autoware.git -b galactic
+git clone https://github.com/ROS-Agent/autoware.git -b feature/bev
 ```
 2. Install dependencies using Ansible. You can also install dependecies manually, following this [website](https://autowarefoundation.github.io/autoware-documentation/galactic/installation/autoware/source-installation/).
 ```shell
@@ -54,15 +54,16 @@ The ROS-Agent brige is the data transmission bridge, which retrieves sensor data
 ```shell
 mkdir -p ~/ros-agent/bridge
 cd ~/ros-agent/bridge
-git clone https://github.com/ROS-Agent/op_bridge.git -b AVP
+git clone https://github.com/ROS-Agent/op_bridge.git -b feature/bev
 git clone https://github.com/ROS-Agent/op_agent.git -b AVP
 git clone https://github.com/ROS-Agent/scenario_runner.git
-git clone https://github.com/ROS-Agent/Maps.git
+git clone https://github.com/ROS-Agent/Maps.git -b feature/bev
 ```
 2. Replace sensor config and launch files
 ```shell
 cd ~/ros-agent/bridge/Maps
 sudo mv autoware.launch.xml ~/ros-agent/autoware/src/launcher/autoware_launch/autoware_launch/launch/autoware.launch.xml
+sudo mv autoware.rviz ~/ros-agent/autoware/src/launcher/autoware_launch/autoware_launch/rviz/autoware.rviz
 sudo mv gnss.launch.xml ~/ros-agent/autoware/src/sensor_kit/sample_sensor_kit_launch/sample_sensor_kit_launch/launch/gnss.launch.xml
 sudo mv sensor_kit_calibration.yaml ~/ros-agent/autoware/src/sensor_kit/sample_sensor_kit_launch/sample_sensor_kit_description/config/sensor_kit_calibration.yaml
 sudo mv sensors_calibration.yaml ~/ros-agent/autoware/src/sensor_kit/sample_sensor_kit_launch/sample_sensor_kit_description/config/sensors_calibration.yaml
@@ -84,21 +85,30 @@ export TEAM_CODE_ROOT=~/ros-agent/bridge/op_agent
 cd $CARLA_ROOT
 ./CarlaUE4.sh
 ```
-2. Open another terminal
+2. Open several terminals
 ```sh
 cd ~/ros-agent/autoware
 source ./install/setup.bash
 cd ~/ros-agent/bridge/op_bridge/op_scripts
 ./run_exploration_mode_ros2.sh
+# open another terminal
+cd ~/ros-agent/bridge/op_bridge/op_bridge
+python3 pub_fake_occgrid.py
+# open another terminal
+cd ~/ros-agent/bridge/op_bridge/op_bridge
+./reset_OccGrid_origin.sh
 ```
-3. Set vehicle initial pose.
-- (1) Click the `2D Pose estimate` button in the toolbar
-- (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the initial pose, as the following gif image shows. ![](Docs/AVP_initial_pose.gif)
-4. Set vehicle goal pose and `Engage` the vehicle, as the following gif image shows.
+3. Set Vehilce goal pose
 - (1) Click the `2D Goal Pose` button in the toolbar
 - (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the goal pose. If done correctly, you will see a planned path from initial pose to goal pose
 - (3) Click the `Engage` button in `AutowareStatePanel` ![](Docs/AVP_set_destination.gif)
+4. Engage the vehicle by shell script.
+```
+cd ~/ros-agent/bridge/op_bridge/op_bridge
+./reset_OccGrid_origin.sh
+```
 5. Enjoy!!
+
 
 
 ## ROS-Agent Architecture
