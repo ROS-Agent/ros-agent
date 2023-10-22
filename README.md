@@ -62,8 +62,6 @@ git clone https://github.com/ROS-Agent/Maps.git -b feature/bev
 2. Replace sensor config and launch files
 ```shell
 cd ~/ros-agent/bridge/Maps
-sudo mv autoware.launch.xml ~/ros-agent/autoware/src/launcher/autoware_launch/autoware_launch/launch/autoware.launch.xml
-sudo mv autoware.rviz ~/ros-agent/autoware/src/launcher/autoware_launch/autoware_launch/rviz/autoware.rviz
 sudo mv gnss.launch.xml ~/ros-agent/autoware/src/sensor_kit/sample_sensor_kit_launch/sample_sensor_kit_launch/launch/gnss.launch.xml
 sudo mv sensor_kit_calibration.yaml ~/ros-agent/autoware/src/sensor_kit/sample_sensor_kit_launch/sample_sensor_kit_description/config/sensor_kit_calibration.yaml
 sudo mv sensors_calibration.yaml ~/ros-agent/autoware/src/sensor_kit/sample_sensor_kit_launch/sample_sensor_kit_description/config/sensors_calibration.yaml
