@@ -83,7 +83,7 @@ export TEAM_CODE_ROOT=~/ros-agent/bridge/op_agent
 cd $CARLA_ROOT
 ./CarlaUE4.sh
 ```
-2. Open several terminals
+1. Open another terminal
 ```sh
 cd ~/ros-agent/autoware
 source ./install/setup.bash
@@ -96,16 +96,16 @@ python3 pub_fake_occgrid.py
 cd ~/ros-agent/bridge/op_bridge/op_bridge
 ./reset_OccGrid_origin.sh
 ```
-3. Set Vehilce goal pose
+1. Set Vehilce goal pose
 - (1) Click the `2D Goal Pose` button in the toolbar
 - (2) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the goal pose. If done correctly, you will see a planned path from initial pose to goal pose
-- (3) Click the `Engage` button in `AutowareStatePanel` ![](Docs/AVP_set_destination.gif)
-4. Engage the vehicle by shell script.
+![](Docs/set_goal_pose.png)
+1. Engage the vehicle by shell script.
 ```
 cd ~/ros-agent/bridge/op_bridge/op_bridge
 ./engage_sh.sh
 ```
-5. Enjoy!!
+1. Enjoy!!
 
 
 
